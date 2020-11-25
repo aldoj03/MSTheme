@@ -121,9 +121,6 @@ input[type="submit"]:hover {
   padding: 0px;
 }
 
-.menu-toggle {
-  display: unset;
-}
 
 /* banner section */
 
@@ -578,13 +575,39 @@ input[type="submit"]:hover {
     margin: 0;
     padding: 0;
   }
+  #menu .menu-toggle{
+    position: absolute;
+    left: 30px;
+    top: 9px;
+  }
+  #menu2{
+    display: none;
+}
 @media (max-width: 900px) {
+    /* #menu.toggled .menu-toggle{
+        display: none;
+      } */
+    #menu .menu-toggle{
+        display: block;
+      }
+    #menu2 .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 35px;
+      }
+    #menu2{
+        display: block;
+    }
   #header {
-    justify-content: space-between;
     position: fixed;
     left: 0;
     right: 0;
     z-index: 10000;
+
+    padding: 5px 30px;
+    flex-flow: row-reverse;
+    align-items: center;
+    justify-content: center;
   }
   .menu__responsive__content {
     background: white;
@@ -594,8 +617,11 @@ input[type="submit"]:hover {
     position: relative;
     z-index: 100;
   }
-  .baner__blog {
-    margin-top: 65px;
+  #container {
+    padding-top: 65px;
+  }
+  #menu2 li{
+      margin: 10px 0;
   }
   #menu .menu-toggle,
   .menu__responsive__container button {
@@ -607,16 +633,16 @@ input[type="submit"]:hover {
   .buttons__container--responsive {
     display: block;
   }
-  #menu.toggled .mask-body-oscure {
+  #menu2.toggled .mask-body-oscure {
     display: block;
   }
-  #menu.toggled .menu__responsive__container,
-  #menu.toggled ul.sub-menu,
-  #menu.toggled ul.children {
+  #menu2.toggled .menu__responsive__container,
+  #menu2.toggled ul.sub-menu,
+  #menu2.toggled ul.children {
     left: 0;
   }
 
-  #menu .menu__responsive__container {
+  #menu2 .menu__responsive__container {
     padding-top: 65px;
     transition: 600ms;
     left: -100%;
@@ -627,7 +653,7 @@ input[type="submit"]:hover {
     width: 250px;
     background: transparent;
   }
-  #menu .menu__responsive__container ul {
+  #menu2 .menu__responsive__container ul {
     position: relative;
     flex-direction: column;
     margin-top: 30px;
@@ -637,17 +663,15 @@ input[type="submit"]:hover {
     border-bottom: 1px solid rgb(136 166 202);
   }
 
-  #menu ul li a {
+  #menu2 ul li {
+    text-align: left !important;
+  }
+  #menu2 ul li a {
     font-size: 16px !important;
     text-align: left !important;
     color: #88a6ca !important;
   }
-  #header {
-    padding: 5px 30px;
-    flex-flow: row-reverse;
-    align-items: center;
-    justify-content: center;
-  }
+  
   .banner__content__container {
     width: 100%;
   }
@@ -707,17 +731,14 @@ input[type="submit"]:hover {
     margin: 8px 13px;
   }
 
-  #menu {
-    margin: 0;
-    position: absolute;
-    left: 27px;
-    margin-right: auto;
+  #menu > *{
+    display: none;
   }
   #branding {
     margin-left: 18px;
     margin-right: 0;
   }
-  #menu div:first-of-type{
+  #menu2 div:first-of-type{
       float: none;
   }
  
@@ -725,9 +746,15 @@ input[type="submit"]:hover {
 
 .menu-toggle__close.menu-toggle .menu-icon {
   color: #00549a;
-  position: absolute;
   right: 20px;
   top: 12px;
+  font-size: 25px;
+}
+.menu-toggle__close.menu-toggle  {
+  background-color: transparent;
+  padding: 0;
+  margin-left: auto;
+  display: block;
 }
 
 @media (max-width: 768px) {
@@ -740,14 +767,10 @@ input[type="submit"]:hover {
   }
  
   #menu.toggled {
-    /* width: unset; */
+    width: unset;
+    height: unset;
   }
 
-  #menu .menu-toggle {
-    display: block;
-    margin-left: auto;
-    display: block;
-  }
 
   .input__search__container {
     width: 80%;
@@ -843,12 +866,7 @@ input[type="submit"]:hover {
     margin-bottom: 50px;
   }
 
-  .login__button {
-    background: #42d890 !important;
-  }
-  .poliza__button {
-    background: white !important;
-  }
+  
 }
 
 .tag__title {
@@ -965,6 +983,7 @@ input[type="submit"]:hover {
   border-radius: 100px !important;
 }
 
-.toggled button:first-child{
+#menu .toggled .toggled .menu-toggle{
     display: none;
 }
+
